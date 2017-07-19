@@ -1,0 +1,12 @@
+// Not sure if we should go this route or style per-component
+// which seems to be more React-y.
+@import "settings";
+@import "~foundation-sites/scss/foundation";
+
+@include foundation-flex-grid;
+@include foundation-flex-classes;
+@include foundation-everything;
+
+body {
+  background: #f5f5f5;
+}
