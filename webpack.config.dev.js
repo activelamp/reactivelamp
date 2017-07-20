@@ -29,7 +29,7 @@ export default {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({     // Create HTML file that includes references to bundled CSS and JS.
-      template: 'src/index.js',
+      template: 'src/index.ejs',
       minify: {
         removeComments: true,
         collapseWhitespace: true
