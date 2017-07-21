@@ -13,7 +13,7 @@ const BlogItem = (props) => {
         <img src={`${props.backend.path}:${props.backend.port}${props.blog.image}`} />
       </Column>
       <Column small={12} medium={10}>
-        <h3><Link to={{pathname: `/blog/${props.blog.nid}`}}>{props.blog.title}</Link></h3>
+        <h3><Link to={{pathname: `${props.blog.path}`, state: `${props.blog.nid}`}}>{props.blog.title}</Link></h3>
         <p>{props.blog.body}</p>
       </Column>
     </Row>

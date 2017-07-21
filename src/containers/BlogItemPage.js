@@ -15,17 +15,22 @@ export class BlogItemPage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      blog: null
+      blog: typeof drupalSettings.blog !== 'undefined' ? drupalSettings.blog : null,
+      nid: props.location.state
     };
   }
 
   componentDidMount() {
-    fetch(`${this.props.backend.path}:${this.props.backend.port}/node/${this.props.params.path}?_format=hal_json`, {
+    if (this.state.blog) {
+      return;
+    }
+
+    fetch(`${this.props.backend.path}:${this.props.backend.port}/api/blog-item/${this.state.nid}?_format=hal_json`, {
       method: "GET"
     })
       .then(res => {
         return res.json().then(blog => {
-          this.setState({blog: blog});
+          this.setState({blog: blog[0]});
         });
       }).catch(error => {
         throw(error);

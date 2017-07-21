@@ -11,8 +11,8 @@ require('./favicon.ico'); // Tell webpack to load favicon.ico
 import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS files too! Webpack will run the associated loader and plug this into the page.
 import { syncHistoryWithStore } from 'react-router-redux';
 
-// @todo: add server rendered store items
-const store = configureStore();
+const preloadedState = typeof drupalSettings !== 'undefined' ? drupalSettings.props : null;
+const store = configureStore(preloadedState);
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store);

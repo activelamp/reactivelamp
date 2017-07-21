@@ -2,7 +2,7 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-  blogItems: [],
+  blogItems: typeof drupalSettings.blogItems !== 'undefined' ? drupalSettings.blogItems : [],
 };
 
 export default function (state = initialState, action) {

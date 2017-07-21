@@ -6,8 +6,8 @@ const BlogBody = (props) => {
   if (props.blog) {
     return (
       <div>
-        <h1>{props.blog.title[0].value}</h1>
-        <p>{props.blog.body[0].value}</p>
+        <h1>{props.blog.title}</h1>
+        <p>{props.blog.body}</p>
       </div>
     );
   } else {

@@ -17,7 +17,9 @@ export class BlogPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.actions.getBlogItems(this.props.backend);
+    if (this.props.blogItems.length === 0) {
+      this.props.actions.getBlogItems(this.props.backend);
+    }
   }
 
   render() {
