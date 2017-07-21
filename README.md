@@ -7,7 +7,7 @@
 
 React Slingshot is a comprehensive starter kit for rapid application development using React. 
 
-Why Slingshot?
+Why Slingshot? Because I said!
 
 1. **One command to get started** - Type `npm start` to start development in your default browser.
 2. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.
