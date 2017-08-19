@@ -1,0 +1,24 @@
+query blogQuery($page: Int!, $pageSize: Int!) {
+    blogGraphqlBlogView(page: $page, pageSize: $pageSize) {
+        count
+        results {
+            ...on NodeBlog {
+                id:entityId
+                created
+                url:entityUrl {
+                    label:entityLabel
+                }
+                tag:fieldTag {
+                    label:entityLabel
+                }
+                title
+                image:fieldImage {
+                    url
+                }
+                body {
+                    summary
+                }
+            }
+        }
+    }
+}
